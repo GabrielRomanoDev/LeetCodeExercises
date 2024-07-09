@@ -1,12 +1,13 @@
 class Solution {
     func containsDuplicate(_ nums: [Int]) -> Bool {
-        for i in 0 ..< nums.count-1 {
-            for j in i+1 ..< nums.count {
-                if nums[i] == nums[j]{
-                    return true
-                }
-            }
+        
+        var sortedNums = nums.sorted()
+        
+        for i in 0..<sortedNums.count-1 {
+            if sortedNums[i] == sortedNums[i+1] { return true}
         }
+        
         return false
+        
     }
 }
